@@ -1,7 +1,6 @@
-site: Personal Jekyll Theme
+site: Sidetrend
 
-url: 
-baseurl: 
+url: https://sidetrend.com
 
 collections:
   pages:

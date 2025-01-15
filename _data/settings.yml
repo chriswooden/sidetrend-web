@@ -1,27 +1,25 @@
 basic_settings:
-  site_title: Personal
+  site_title: Sidetrend
   favicon_image: /images/favicon.png
 
 header_settings:
-  logo_image: 
+  logo_image: /images/logo.title.web.png
   logo_width: 200
 
 menu_settings:
   menu_items:
-    - title: 'Projects'
+    - title: 'Home'
       url: '/'
-    - title: 'Blog'
-      url: '/blog/'
     - title: 'About'
       url: '/about'
     - title: 'Contact'
       url: '/contact'
 
 footer_settings:
-  footer_tagline: A sleek, modern Jekyll theme for personal websites.
+  footer_tagline: Professional trading signals.
 
 hero_settings:
-  overlay_opacity: 0.8
+  overlay_opacity: 0.0
 
 post_settings:
   grid_spacing: 10
@@ -61,21 +59,21 @@ social_settings:
   linkedin_url: ''
 
 color_settings:
-  background_color: '#ffffff'
-  background_alt_color: '#f4f5f6'
-  text_dark_color: '#2A2F36'
-  text_medium_color: '#6C7A89'
-  text_light_color: '#ABB7B7'
-  accent_color: '#3498db'
-  border_color: '#dddddd'
-  hero_background_color: '#132930'
-  hero_text_color: '#ffffff'
-  error_color: '#D64541'
+  background_color: '#1C1C1E'
+  background_alt_color: '#101010'
+  text_dark_color: '#FFFFFF'
+  text_medium_color: '#8F8F96'
+  text_light_color: '#8F8F96'
+  accent_color: '#36BDE3'
+  border_color: '#29292C'
+  hero_background_color: '#2C2C2E'
+  hero_text_color: '#00000000'
+  error_color: '#FF453A'
 
 font_settings:
-  font_embed: '<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">'
-  title_font: '"Muli", sans-serif'
-  body_font: '"Muli", sans-serif'
+  font_embed: '<link href="https://fonts.googleapis.com/css?family=Figtree" rel="stylesheet">'
+  title_font: '"Figtree", sans-serif'
+  body_font: '"Figtree", sans-serif'
   regular_weight: 400
   bold_weight: 600
   site_title:
@@ -88,7 +86,7 @@ font_settings:
     small_size: 30
     medium_size: 15
     large_size: 17
-    weight: 600
+    weight: 400
     letter_spacing: 0
   h1:
     small_size: 35
