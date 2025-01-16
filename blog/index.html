@@ -1,68 +1,111 @@
 ---
 layout: default
+body_classes: page-blog
 title: Blog
-description: Personal includes a simple blog with pagination.
-featured_image: /images/demo/blog.jpg
+description: "The latest news and opinions"
+header_transparent: true
+
+hero:
+  enabled: true
+  heading: "Blog"
+  sub_heading: "Latest news & articles"
+  text_color: "#FFFFFF"
+  background_color: ""
+  background_gradient: true
+  background_image: false
+  background_image_blend_mode: overlay # "overlay", "multiply", "screen"
+  fullscreen_mobile: false
+  fullscreen_desktop: false
+  height: "330px"
+  buttons:
+    enabled: false
+    list:
+      - text: "Contact Us"
+        url: "/contact"
+        external: false
+        fa_icon: false
+        size: large
+        outline: true
+        style: "light"
 ---
 
-<section class="hero hero--single">
-
-	<div class="hero__image" style="background-image: url({{ page.featured_image | relative_url }})">
-		<div class="hero__overlay"></div>
-	</div>
-
-	<div class="wrap">
-
-		<h1>What I've been up to</h1>
-		<p>Personal includes a simple blog with pagination.</p>
-
-	</div>
-
-</section>
-
-<section class="listing">
-
-	<div class="wrap">
-
-		{% for post in paginator.posts %}
-
-		<article class="post">
-
-			<div class="post__image-wrap">
-				<div class="post__image" style="background-image: url({{ post.featured_image | relative_url }})"></div>
-			</div>
-
-			<div class="post__content-wrap">
-				<div class="post__content">
-					<h2 class="post__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-					<p class="post__subtitle">{{ post.subtitle }}</p>
-					<p class="post__description">{{ post.description }}</p>
-				</div>
-			</div>
-
-		</article>
-
-		{% endfor %}
-
-	</div>
-
-</section>
-
-{% if paginator.total_pages > 1 %}
-
-<section class="pagination">
-
-	<div class="wrap">
-
-		{% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | relative_url }}" class="button pagination__prev"><i class="fa fa-arrow-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
-		{% endif %}
-		{% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | relative_url }}" class="button pagination__next"><span>Older Posts</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-		{% endif %}
-
-	</div>
-
-</section>
-
+{% if page.hero.enabled %}
+  {% include framework/hero.html 
+    heading=page.hero.heading
+    sub_heading=page.hero.sub_heading
+    background_image=page.hero.background_image
+    background_image_blend_mode=page.hero.background_image_blend_mode
+    background_color=page.hero.background_color
+    background_gradient=page.hero.background_gradient
+    text_color=page.hero.text_color
+    fullscreen_mobile=page.hero.fullscreen_mobile
+    fullscreen_desktop=page.hero.fullscreen_desktop
+    height=page.hero.height
+    buttons=page.hero.buttons
+  %}
+{% else %}
+  <div class="section">
+    <div class="container">
+    {% include framework/title.html
+      fa_icon=page.fa_icon
+      icon=page.icon
+      title=page.title
+      description=page.description
+      image=page.image
+    %}
+    </div>
+  </div>
 {% endif %}
+
+{% assign post_pages = site.posts  %}
+
+<div class="section strip-base">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="row">
+          {% for post in paginator.posts %}
+            <div class="col-12 mb-3 mb-md-9">
+              {% include theme/cards/card-posts.html
+                style="row"
+                date=post.date
+                title=post.title
+                description=post.description 
+                thumbnail=post.thumbnail 
+                url=post.url
+                categories=post.categories
+                show_read_more=false
+              %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-3">
+        <div class="sidebar">
+          <h5>Categories</h5>
+          <ul>
+            {% for category in site.categories %}
+              {% capture category_name %}
+                {{ category | first }}
+              {% endcapture %}
+              <li>
+                <a href="/category/{{ category_name | slugify }}">{{ category_name | camelcase }}</a>
+                <span>
+                  ({{ category[1].size }})</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        {% include framework/paginator.html %}
+      </div>
+    </div>
+
+  </div>
+</div>
