@@ -8,8 +8,8 @@ meta_title: Sidetrend - Professional trading signals
 
 hero:
   enabled: true
-  heading: "Professional trading signals that anyone can use."
-  sub_heading: "Sidetrend does cool stuff so you can just sit back and make money like a pimp and go to the moon init bruh."
+  heading: ""
+  sub_heading: ""
   text_color: "#FFFFFF"
   background_color: "#101010"
   background_gradient: false
@@ -17,7 +17,7 @@ hero:
   background_image_blend_mode:  # "overlay", "multiply", "screen"
   fullscreen_mobile: true
   fullscreen_desktop: false
-  height: "900px"
+  height: "660px"
   buttons:
     enabled: false
     list:
