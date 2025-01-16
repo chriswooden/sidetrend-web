@@ -94,8 +94,8 @@ outro:
   enabled: true
   align: center
   image: false
-  heading: Get Started Today
-  sub_heading: "Save time and money using this premium Jekyll theme."
+  heading: Manage all your accounts, budgets and bills in one place
+  sub_heading: "Snowlake is now available to download from both the App Store and Google Play Store."
   features:
     enabled: false
     list:
@@ -104,7 +104,7 @@ outro:
   buttons:
     enabled: false
     list:
-      - text: "Contact Us"
+      - text: "App Store"
         url: "/contact"
         external: false
         size: "large"

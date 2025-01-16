@@ -31,6 +31,21 @@ body_classes: page-home
   </div>
 {% endif %}
 
+{% if page.outro.enabled %}
+<div class="section">
+  <div class="container">
+    {% include framework/info.html
+    heading=page.outro.heading
+    sub_heading=page.outro.sub_heading
+    align=page.outro.align
+    features=page.outro.features
+    buttons=page.outro.buttons
+    image=page.outro.image
+    %}
+  </div>
+</div>
+{% endif %}
+
 {% assign cards = site.services | sort: 'date' | reverse %}
 {% assign limit = page.services.limit | default: 3 %}
 {% assign sort_by = page.services.sort | default: 'date' %}
